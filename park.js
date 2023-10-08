@@ -5,12 +5,32 @@ let getWeather = function (lat, long) {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
-            //     displayCurrentWeather(data);
-            //     display5DayForecast(data);
-            //     addCityToHistory(city);
+            console.log("first");
+     //       console.log(data);
+            displayCurrentWeather(data);
+
+//
         });
 };
+
+//TODO:display 5 day forecast
+function displayCurrentWeather(data) {
+    // Extract the data for current weather and display it
+    console.log("FIND OUT!!");
+    console.log(data);
+    document.getElementById('city-name').textContent = data.city.name;
+    document.getElementById('current-date').textContent = new Date(data.list[0].dt * 1000).toLocaleDateString();
+    document.getElementById('weather-icon').src = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png";
+    document.getElementById('temperature').textContent = "Temperature: " + (data.list[0].main.temp - 273.15).toFixed(0) + "°C"; // Convert Kelvin to Celsius
+    document.getElementById('humidity').textContent = "Humidity: " + data.list[0].main.humidity + "%";
+    document.getElementById('wind-speed').textContent = "Wind Speed: " + data.list[0].wind.speed + " m/s";
+    console.log("third");
+    console.log(data);
+}
+
+
+//TODO: display park info
+//TODO: create a model: alerts, etc
 
 let getParkInfo = function (park) {
     var apiUrl = `https://developer.nps.gov/api/v1/parks?parkCode=${park}&api_key=ORm0C1iPEzxladrhfvdeAK32TYKBEaXewFngkMZp`
