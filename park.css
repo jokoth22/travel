@@ -1,0 +1,41 @@
+html {
+    background-color: rgb(24, 60, 189);
+  }
+
+header {
+    height: 10%;
+}
+
+.header img {
+    float: left;
+    max-width: 10%;
+    max-height: 10%;
+    transform: scaleX(-1);
+}
+
+.header h1 {
+    position: relative;
+}
+
+
+h1 {
+    color: rgb(191, 0, 255);
+    font-family: 'Bitter', serif;
+    max-width: 10%;
+    max-height: 10%;
+}
+
+.for {
+    color:yellow
+}
+
+p {
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+    padding: 15px
+  }
+
+.result {
+    margin-bottom: 10px;
+    display: block; 
+ }

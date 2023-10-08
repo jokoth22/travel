@@ -1,8 +1,11 @@
 var showNationalParks = function(parks){
     console.log(parks)
     let results = document.getElementById("results");
+    results.innerHTML = "";
     for  (i=0;i<parks.length;i++){ 
-        let park = document.createElement("div")
+        let park = document.createElement("a");
+        park.className = "result";
+        park.href = `park.html?parkCode=${parks[i].parkCode}`;
         park.innerHTML = [
             `<strong>${parks[i].fullName}</strong>`,
             `<p>${parks[i].description}</p>`
