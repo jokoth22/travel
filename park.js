@@ -6,10 +6,10 @@ let getWeather = function (lat, long) {
         .then(response => response.json())
         .then(data => {
             console.log("first");
-     //       console.log(data);
+            //       console.log(data);
             displayCurrentWeather(data);
 
-//
+            //
         });
 };
 
@@ -30,6 +30,24 @@ function displayCurrentWeather(data) {
 
 
 //TODO: display park info
+function displayParkHours(hours) {
+    const modal = document.getElementById('parkHoursModal');
+    const close = document.getElementsByClassName('close')[0];
+
+    document.getElementById('parkHours').innerHTML = hours;
+
+    modal.style.display = "block";
+
+    close.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
 //TODO: create a model: alerts, etc
 
 let getParkInfo = function (park) {
@@ -43,6 +61,36 @@ let getParkInfo = function (park) {
         })
         .then(data => {
             console.log(data);
+
+            // Display park name
+            document.getElementById('parkName').textContent = data.data[0].fullName;
+            
+            // Display park address
+            if (data.data[0].addresses && data.data[0].addresses.length > 0) {
+                let primaryAddress = data.data[0].addresses.find(address => address.type === "Physical");
+                if (primaryAddress) {
+                    document.getElementById('parkAddress').textContent = `${primaryAddress.line1}, ${primaryAddress.city}, ${primaryAddress.stateCode} ${primaryAddress.postalCode}`;
+                }
+            }
+
+            // Display park activities
+            if (data.data[0].activities && data.data[0].activities.length > 0) {
+                let activitiesList = data.data[0].activities.map(activity => activity.name).join(", ");
+                document.getElementById('parkActivities').textContent = activitiesList;
+            }
+
+
+            // Display park hours
+            if (data.data[0].operatingHours && data.data[0].operatingHours.length > 0) {
+                let hours = data.data[0].operatingHours[0].standardHours;
+                let hoursStr = "";
+
+                for (let day in hours) {
+                    hoursStr += `<p><strong>${day}:</strong> ${hours[day]}</p>`;
+                }
+                displayParkHours(hoursStr);
+            }
+
             getWeather(data.data[0].latitude, data.data[0].longitude);
         })
         .catch(error => {
