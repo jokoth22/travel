@@ -36,4 +36,18 @@ var statesEl= document.getElementById("states");
 statesEl.addEventListener("change",function(event){
     console.log(statesEl.value)
     getNationalParks(statesEl.value)
+    localStorage.setItem('state', statesEl.value);
 });
+      
+const modal = document.querySelector('.modal');
+const openModal = document.querySelector('.open-button');
+const closeModal = document.querySelector('.close-button');
+
+openModal.addEventListener('click', () => {
+    modal.showModal();
+})
+
+closeModal.addEventListener('click', () => {
+    modal.close();
+})
+
