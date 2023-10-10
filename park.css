@@ -52,6 +52,7 @@ p {
     padding: 15px
  }
 
+<<<<<<< HEAD
  .custom-restricted {
     height: 50px;
     width: 150px;
@@ -85,6 +86,8 @@ p {
     background-color: rgb(255, 127, 242);
  }
 
+=======
+>>>>>>> 65bdcf6dc68a7f33940e40ac9acf2f7940f5c961
  .modal {
     display: none;
     position: fixed;
@@ -96,7 +99,10 @@ p {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 65bdcf6dc68a7f33940e40ac9acf2f7940f5c961
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -104,14 +110,20 @@ p {
     border: 1px solid #888;
     width: 50%;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 65bdcf6dc68a7f33940e40ac9acf2f7940f5c961
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 65bdcf6dc68a7f33940e40ac9acf2f7940f5c961
 .close:hover, .close:focus {
     color: black;
     text-decoration: none;
