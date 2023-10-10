@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,200;1,600&family=Quicksand:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="park.css" />
+    <title>GoForth</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src="gopher.jpeg" alt="gopher logo">
+        <h1>Go<span class="for">Forth</span></h1>
+    </div>
+    <div class="weather">
+        <div class="card-body">
+            <h5 class="card-title" id="city-name"></h5>
+            <h6 class="card-subtitle mb-2 text-muted" id="current-date"></h6>
+            <img id="weather-icon" src="" alt="Weather icon" class="float-end">
+            <p class="card-text" id="temperature"></p>
+            <p class="card-text" id="humidity"></p>
+            <p class="card-text" id="wind-speed"></p>
+        </div>
+    </div>
+    <!-- Park Hours of operation modal-->
+    <div id="parkHoursModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Park Operating Hours</h2>
+          <div id="parkHours"></div>
+        </div>
+      </div>
+      <!-- Park Details -->
+<h1 id="parkName"></h1>
+<div id="parkDetails">
+    <p><strong>Address:</strong> <span id="parkAddress"></span></p>
+    <p><strong>Activities:</strong> <span id="parkActivities"></span></p>
+</div>
+    <script src="./park.js"></script>
+</body>
+</html>
