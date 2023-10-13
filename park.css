@@ -68,15 +68,6 @@ p {
     background-color: rgb(255, 127, 242);
  }
 
- .modal {
-    max-width: 50ch;
-    text-align: center;
- }
-
- .modal::backdrop { 
-    background: rgb(0 0 0 / .4);
- }
-
  .close-button {
     height: 50px;
     width: 150px;
@@ -85,8 +76,13 @@ p {
     background-color: rgb(255, 127, 242);
  }
 
+ .modal::backdrop { 
+    background: rgb(0 0 0 / .4);
+ }
+
  .modal {
-    display: none;
+    max-width: 50ch;
+    text-align: center;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -98,7 +94,8 @@ p {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    color:black;
+    background-color: rgb(255, 127, 242);
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
